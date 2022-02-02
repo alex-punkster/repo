@@ -1,0 +1,1 @@
+ps axo pid,comm >> file.txt
