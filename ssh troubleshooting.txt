@@ -1,0 +1,7 @@
+Before starting a troubleshooting, we suppose that internet connection is OK, the server has Ubuntu OS on board and SSH connection had worked before.
+1. At first, check ping to the server. If it's ok, go to the next step
+2. Make sure, that login and password are correct
+3. Check firewall settings on laptop and allow SSH connection if need
+4. Connect to the server console and check if the SSH client installed and works properly: write a command "service ssh status". If status is Inactive, then write a command "service ssh start"
+5. Check your root user account rights to connect via SSH: in the file /etc/ssh/sshd_config variable "PermitRootLogin" should be turned to "yes"
+6. Check the SSH port by writting a command grep Port /etc/ssh/sshd_config, default ssh port is 22. Than check if this port is listened: lsof -i:22
